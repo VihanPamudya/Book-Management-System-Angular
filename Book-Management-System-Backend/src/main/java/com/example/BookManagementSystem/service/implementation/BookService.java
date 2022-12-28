@@ -28,10 +28,14 @@ public class BookService implements IBookService {
     public List<Book> getAll() throws Exception {
         return null;
     }
-
     @Override
     public void delete(Long id) throws Exception {
 
+    }
+
+    @Override
+    public BookDto getBook(Long id) throws Exception {
+        return null;
     }
 
     @Override
