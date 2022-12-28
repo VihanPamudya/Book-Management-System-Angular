@@ -1,5 +1,8 @@
 package com.example.BookManagementSystem.controller;
 
+import com.example.BookManagementSystem.dto.requestDto.BookRequestDto;
+import com.example.BookManagementSystem.dto.responseDto.BookDto;
+import com.example.BookManagementSystem.model.Book;
 import com.example.BookManagementSystem.service.IBookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,69 +23,63 @@ public class BookController {
         this.bookService = bookService;
     }
 
-    @GetMapping(value = "/view/{name}")
-    public ResponseEntity<UserDto> getUser(@PathVariable("name") String epfNumber) {
+    @GetMapping(value = "/view/{id}")
+    public ResponseEntity<BookDto> getBook(@PathVariable("id") Long id) {
 
         try {
-            UserDto userDto = userService.findUserById(epfNumber);
-            return new ResponseEntity<>(userDto, HttpStatus.OK);
-        } catch (CustomException ex) {
-            return ErrorResponseUtil.errorResponse(ex);
+            BookDto bookDto = bookService.getBook(id);
+            return new ResponseEntity<>(bookDto, HttpStatus.OK);
         } catch (Exception ex) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
 
-    //Get user list
     @GetMapping(value = "/list")
-    public ResponseEntity<List<User>> getAllUsers() {
+    public ResponseEntity<List<Book>> getAllBooks() {
 
         try {
-            List<User> userList = userService.getAll();
-            return new ResponseEntity<>(userList, HttpStatus.OK);
-        } catch (CustomException ex) {
-            return ErrorResponseUtil.errorResponse(ex);
+            List<Book> bookList = bookService.getAll();
+            return new ResponseEntity<>(bookList, HttpStatus.OK);
+        } catch (Exception ex) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
-    
+
     @PostMapping(value = "/add")
-    public ResponseEntity<UserDto> createUser(@RequestBody UserRequestDto user) {
+    public ResponseEntity<BookDto> createBook(@RequestBody BookRequestDto book) {
 
         try {
-            UserDto savedUser = userService.create(user);
+            BookDto saveBook = bookService.create(book);
 
-            return new ResponseEntity<>(savedUser, HttpStatus.OK);
-        } catch (CustomException ex) {
-            return ErrorResponseUtil.errorResponse(ex);
+            return new ResponseEntity<>(saveBook, HttpStatus.OK);
+        } catch (Exception ex) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
 
     }
 
-    @PutMapping(value = "/modify/{name}")
-    public ResponseEntity<UserDto> updateUser(@PathVariable("name") String epfNumber, @RequestBody UserRequestDto user) {
+    @PutMapping(value = "/update/{id}")
+    public ResponseEntity<BookDto> updateBook(@PathVariable("id") Long id, @RequestBody BookRequestDto book) {
 
         try {
-            UserDto updatedUser = userService.update(epfNumber, user);
+            BookDto updateBook = bookService.update(id, book);
 
-            return new ResponseEntity<>(updatedUser, HttpStatus.OK);
-        } catch (CustomException ex) {
-            return ErrorResponseUtil.errorResponse(ex);
+            return new ResponseEntity<>(updateBook, HttpStatus.OK);
+        } catch (Exception ex) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
-
     }
 
-    @DeleteMapping(value = "/delete/{name}")
-    public ResponseEntity<Void> deleteUser(@PathVariable("name") List<String> epfNumber) {
+    @DeleteMapping(value = "/delete/{id}")
+    public ResponseEntity<Void> deleteUser(@PathVariable("id") List<Long> id) {
 
         try {
-            for (String id : epfNumber) {
-                userService.delete(id);
+            for (Long bookId : id) {
+                bookService.delete(bookId);
             }
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        } catch (CustomException ex) {
-            return ErrorResponseUtil.errorResponse(ex);
+        } catch (Exception ex) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
-
     }
-
 }
