@@ -8,6 +8,9 @@ import { AllBookListComponent } from './all-book-list/all-book-list.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BookAddComponent } from './components/book/book-add/book-add.component';
+import { BookUpdateComponent } from './components/book/book-update/book-update.component';
+import { BookAllListComponent } from './components/book/book-all-list/book-all-list.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AddBookComponent,
     AllBookListComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    BookAddComponent,
+    BookUpdateComponent,
+    BookAllListComponent
   ],
   imports: [
     BrowserModule,
