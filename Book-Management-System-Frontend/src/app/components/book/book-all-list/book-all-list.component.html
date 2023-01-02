@@ -1,33 +1,35 @@
 <div class="col">
-    <div class="card shadow">
-      <div class="card-header border-0">
-        <h3 class="mb-0">Book's List</h3>
-      </div>
-      <div class="table-responsive">
-        <table class="table align-items-center table-flush">
-          <thead class="thead-light">
-            <tr>
-              <th scope="col">Book Name</th>
-              <th scope="col">Author Name</th>
-              <th scope="col">Quantity</th>
-              <th scope="col">Price</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let book of bookList">
-              <td>{{book.book_name}}</td>
-              <td>{{book.author_name}}</td>
-              <td>{{book.quantity}}</td>
-              <td>{{book.price}}</td>
-              <td td class="text-right">
-                <button (click)="edit(book.book_id)" type="button" class="btn btn-primary mx-3" routerLink="/">Edit</button>
-              </td>
-              <td td class="text-right">
-                <button (click)="delete(book.book_id)" type="button" class="btn btn-danger mx-3" routerLink="/">Delete</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+  <div class="card shadow">
+    <div class="card-header border-0">
+      <h3 class="mb-0">Book's List</h3>
+    </div>
+    <div class="table-responsive">
+      <table class="table align-items-center table-flush">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">Book Name</th>
+            <th scope="col">Author Name</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let book of bookList">
+            <td>{{book.book_name}}</td>
+            <td>{{book.author_name}}</td>
+            <td>{{book.quantity}}</td>
+            <td>{{book.price}}</td>
+            <td td class="text-right">
+              <button (click)="edit(book.book_id)" type="button" class="btn btn-primary mx-3"
+                routerLink="/">Edit</button>
+            </td>
+            <td td class="text-right">
+              <button (click)="delete(book.book_id)" type="button" class="btn btn-danger mx-3"
+                routerLink="/">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
+</div>

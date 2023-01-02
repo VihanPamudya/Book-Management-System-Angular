@@ -9,22 +9,27 @@ import { BookUpdateComponent } from './components/book/book-update/book-update.c
 import { BookAllListComponent } from './components/book/book-all-list/book-all-list.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from "./components/layout/header/header.component";
+import { FooterComponent } from './components/layout/footer/footer.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    BookAddComponent,
-    BookUpdateComponent,
-    BookAllListComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgbModule,
-    FormsModule,
-    [HttpClientModule,]
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        BookAddComponent,
+        BookUpdateComponent,
+        BookAllListComponent,
+        HeaderComponent,
+        FooterComponent
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        NgbModule,
+        FormsModule,
+        [HttpClientModule,],
+        
+    ]
 })
 export class AppModule { }
