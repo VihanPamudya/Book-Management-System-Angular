@@ -1,1 +1,113 @@
-<p>book-update works!</p>
+<div class="main-content">
+    <div class="container-fluid mt--7">
+      <div class="row">
+        <div class="col-xl-8 order-xl-1">
+          <div position=relative class="card bg-secondary shadow">
+            <div class="card-header bg-white border-0">
+              <div class="row align-items-center">
+                <div class="col-8">
+                  <h3 class="mb-0">Update Doctor's Details</h3>
+                </div>
+  
+              </div>
+            </div>
+            <div class="card-body">
+              <form #form="ngForm" (ngSubmit)="onSubmit()" autocomplete="off">
+                <div class="pl-lg-4">
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-firsttname">First Name</label>
+                        <input type="text" id="firstname" name="first_name" #first_name="ngModel"
+                          [(ngModel)]="doctor.first_name" class="form-control form-control-alternative"
+                          placeholder="First Name" required>
+                        <label class="text-danger"
+                          *ngIf="(first_name.touched || form.submitted) && first_name.errors?.['required']">
+                          First name is required
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="form-group focused">
+                        <label class="form-control-label" for="input-lastname">Last Name</label>
+                        <input type="text" id="input-lastname" name="last_name" #last_name="ngModel" [(ngModel)]="doctor.last_name"
+                          class="form-control form-control-alternative" placeholder="Last Name" required>
+                        <label class="text-danger" *ngIf="(last_name.touched || form.submitted) && last_name.errors?.['required']">
+                          Last Name is required
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="form-group focused">
+                        <label class="form-control-label" for="input-email">Email</label>
+                        <input type="email" id="input-email" name="email" #email="ngModel" [(ngModel)]="doctor.email"
+                          class="form-control form-control-alternative" placeholder="nipunadilshan19@uom.lk" required
+                          email>
+                        <label class="text-danger"
+                          *ngIf="(email.touched || form.submitted) && email.errors?.['required']">
+                          Email is required
+                        </label>
+                        <label class="text-danger" *ngIf="(email.touched || form.submitted) && email.errors?.['email']">
+                          Enter a valid email address
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="form-group focused">
+                        <label class="form-control-label" for="input-mobile-number">Mobile number</label>
+                        <input type="text" id="input-mobile-number" name="mobile_number" #mobile_number="ngModel" [(ngModel)]="doctor.mobile_number"
+                          class="form-control form-control-alternative" placeholder="Mobile Number" required>
+                        <label class="text-danger" *ngIf="(mobile_number.touched || form.submitted) && last_name.errors?.['required']">
+                          Mobile Number is required
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="form-group focused">
+                        <label class="form-control-label" for="input-doc-address">Doctor's Address</label>
+                        <input type="text" id="doctor-address" name="doc_address" #doc_address="ngModel" [(ngModel)]="doctor.doc_address"
+                          class="form-control form-control-alternative" placeholder="Doctor's Address" required>
+                        <label class="text-danger" *ngIf="(doc_address.touched || form.submitted) && doc_address.errors?.['required']">
+                          Doctor's address is required
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="form-group focused">
+                        <label class="form-control-label" for="input-department">Department</label>
+                        <select id="select-status" name="department" #department="ngModel"
+                                                  [(ngModel)]="doctor.department"
+                                                  class="form-control form-control-alternative" required>
+                                                  <option value="Allergists">Allergists</option>
+                                                  <option value="Dermatologists">Dermatologists</option>
+                          <option value="Ophthalmologists">Ophthalmologists</option>
+                          <option value="Cardiologists">Cardiologists</option>
+                          <option value="Endocrinologists">Endocrinologists</option>
+                          <option value="Gastroenterologists">Gastroenterologists</option>
+                          <option value="Nephrologists">Nephrologists</option>
+                                              </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4 text-right">
+                    <button class="btn btn-sm btn-primary" [disabled]="form.invalid">Update Doctor</button>
+                    <button class="btn btn-sm btn-primary" routerLink="">Cancel</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
