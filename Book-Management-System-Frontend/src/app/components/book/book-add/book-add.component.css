@@ -251,16 +251,7 @@
     flex-grow: 1;
   }
   
-  .col-4 {
-    max-width: 33.33333%;
-    flex: 0 0 33.33333%;
-  }
-  
-  .col-8 {
-    max-width: 66.66667%;
-    flex: 0 0 66.66667%;
-  }
-  
+ 
   @media (min-width: 768px) {
   
     .col-md-12 {
@@ -794,7 +785,7 @@
   }
   
   .main-content {
-    padding-top: 200px;
+    padding-top: 120px;
     position: relative;
   }
   
