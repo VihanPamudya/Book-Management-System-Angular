@@ -1,93 +1,61 @@
-<div class="main-content">
-    <div class="container-fluid mt--7">
-        <div class="row">
-            <div class="col-xl-8 order-xl-1">
-                <div position=relative class="card bg-secondary shadow">
-                    <div class="card-header bg-white border-0">
-                        <div class="row align-items-center">
-                            <div class="col-8">
-                                <h3 class="mb-0">Enter Book's Details</h3>
-                            </div>
+<div>
+    <div class="container">
+        <h2 class="text-center mt-3">Add Book</h2>
+        <br />
+        <form #form="ngForm" (ngSubmit)="onSubmit()" autocomplete="off">
 
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <form #form="ngForm" (ngSubmit)="onSubmit()" autocomplete="off">
-                            <div class="pl-lg-4">
-
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="form-group focused">
-                                            <label class="form-control-label" for="input-bookname">Book Name</label>
-                                            <input type="text" id="bookname" name="book_name" #book_name="ngModel"
-                                                [(ngModel)]="book.book_name"
-                                                class="form-control form-control-alternative" placeholder="Book Name"
-                                                required>
-                                            <label class="text-danger"
-                                                *ngIf="(book_name.touched || form.submitted) && book_name.errors?.['required']">
-                                                Book name is required
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="form-group focused">
-                                            <label class="form-control-label" for="input-authorname">Author Name</label>
-                                            <input type="text" id="input-authorname" name="author_name" #author_name="ngModel"
-                                                [(ngModel)]="book.author_name"
-                                                class="form-control form-control-alternative" placeholder="Author Name"
-                                                required>
-                                            <label class="text-danger"
-                                                *ngIf="(author_name.touched || form.submitted) && author_name.errors?.['required']">
-                                                Author Name is required
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="form-group focused">
-                                            <label class="form-control-label" for="input-quantity">Quantity</label>
-                                            <input type="text" id="input-quantity" name="quantity" #quantity="ngModel"
-                                                [(ngModel)]="book.quantity"
-                                                class="form-control form-control-alternative" placeholder="Quantity"
-                                                required>
-                                            <label class="text-danger"
-                                                *ngIf="(quantity.touched || form.submitted) && quantity.errors?.['required']">
-                                                Quantity is required
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="form-group focused">
-                                            <label class="form-control-label" for="input-price">Price</label>
-                                            <input type="text" id="input-price" name="price" #price="ngModel"
-                                                [(ngModel)]="book.price"
-                                                class="form-control form-control-alternative" placeholder="Price"
-                                                required>
-                                            <label class="text-danger"
-                                                *ngIf="(price.touched || form.submitted) && price.errors?.['required']">
-                                                Price is required
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-4 text-right">
-                                    <button class="btn btn-sm btn-primary" [disabled]="form.invalid">Add</button>
-                                    <button class="btn btn-sm btn-primary" routerLink="">Cancel</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label" for="input-bookname">Book Name</label>
+                <div class="col-sm-10">
+                    <input type="text" id="bookname" name="book_name" #book_name="ngModel" [(ngModel)]="book.book_name"
+                        class="form-control form-control-alternative" placeholder="Book Name" required />
+                    <label class="text-danger"
+                        *ngIf="(book_name.touched || form.submitted) && book_name.errors?.['required']">
+                        Book name is required
+                    </label>
                 </div>
             </div>
-        </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label" for="input-authorname">Author Name</label>
+                <div class="col-sm-10">
+                    <input type="text" id="authorname" name="author_name" #author_name="ngModel" [(ngModel)]="book.author_name"
+                        class="form-control form-control-alternative" placeholder="Author Name" required />
+                    <label class="text-danger"
+                        *ngIf="(author_name.touched || form.submitted) && author_name.errors?.['required']">
+                        Author name is required
+                    </label>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label" for="input-bookname">Quantity</label>
+                <div class="col-sm-10">
+                    <input type="text" id="quantity" name="quantity" #quantity="ngModel" [(ngModel)]="book.quantity"
+                        class="form-control form-control-alternative" placeholder="Quantity" required />
+                    <label class="text-danger"
+                        *ngIf="(quantity.touched || form.submitted) && quantity.errors?.['required']">
+                        Quantity is required
+                    </label>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label" for="input-price">Price</label>
+                <div class="col-sm-10">
+                    <input type="text" id="price" name="price" #price="ngModel" [(ngModel)]="book.price"
+                        class="form-control form-control-alternative" placeholder="Price" required />
+                    <label class="text-danger"
+                        *ngIf="(price.touched || form.submitted) && price.errors?.['required']">
+                        Price is required
+                    </label>
+                </div>
+            </div>
+
+            <div class="col-4 text-right">
+                <button type="button" class="btn btn-primary" [disabled]="form.invalid">Add</button>
+                <button type="button" class="btn btn-danger" routerLink="" style="margin-left: 10px;">Cancel</button>
+            </div>
+        </form>
     </div>
 </div>
