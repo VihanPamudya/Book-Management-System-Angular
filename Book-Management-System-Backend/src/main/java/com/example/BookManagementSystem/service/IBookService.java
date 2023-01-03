@@ -16,4 +16,6 @@ public interface IBookService {
     public void delete(Long id) throws Exception;
 
     public BookDto update(Long id, BookRequestDto book) throws Exception;
+
+    public BookDto convertBookToBookResponseDto(Book book) throws Exception;
 }

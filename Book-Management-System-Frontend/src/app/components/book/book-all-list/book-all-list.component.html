@@ -1,38 +1,37 @@
 <div class="container">
   <h1 class="text-center mt-3"> Book List </h1>
   <table class="table table-bordered">
-      <thead>
-          <tr class="tr-expand-md tr-dark bg-dark" style="color: white; font-size: 17px; text-align: center;">
-            <th scope="col">Book Name</th>
-            <th scope="col">Author Name</th>
-            <th scope="col">Quantity</th>
-            <th scope="col">Price</th>
-          </tr>
-      </thead>
-      <tbody style="text-align: center;">
-          
-                      <tr *ngFor="let book of bookList">
-                          <td style="padding-top: 15px; cursor: pointer;" > {{book.book_name}} </td>
-                          <td style="padding-top: 15px; cursor: pointer;" > {{book.author_name}} </td>
-                          <td style="padding-top: 15px; cursor: pointer;" > {{book.quantity}} </td>
-                          <td style="padding-top: 15px; cursor: pointer;" > {{book.price}} </td>
-                          <!-- <td>
+    <thead>
+      <tr class="tr-expand-md tr-dark bg-dark" style="color: white; font-size: 17px; text-align: center;">
+        <th scope="col">Book Name</th>
+        <th scope="col">Author Name</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
+    <tbody style="text-align: center;">
+
+      <tr *ngFor="let book of bookList">
+        <td style="padding-top: 15px; cursor: pointer;"> {{book.book_name}} </td>
+        <td style="padding-top: 15px; cursor: pointer;"> {{book.author_name}} </td>
+        <td style="padding-top: 15px; cursor: pointer;"> {{book.quantity}} </td>
+        <td style="padding-top: 15px; cursor: pointer;"> {{book.price}} </td>
+        <!-- <td>
                               <Link class="btn btn-success" to={`/edit-book/${book.id}`} style={{ width: "80px" }}>Update</Link>
                               {/* <Link class="btn btn-secondary" to={`/view-book/${book.id}`} style={{ marginLeft: "15px", width: "80px",color: "white" }}>View</Link> */}
                               <button class="btn btn-danger" onClick={() => deleteBook(book.id)}
                                   style={{ marginLeft: "15px", width: "80px" }}> Delete</button>
 
                           </td> -->
-                          <td td class="text-right">
-                            <button (click)="edit(book.book_id)" type="button" class="btn btn-primary mx-3"
-                              routerLink="/">Edit</button>
-                          </td>
-                          <td td class="text-right">
-                            <button (click)="delete(book.book_id)" type="button" class="btn btn-danger mx-3"
-                              routerLink="/">Delete</button>
-                          </td>
-                      </tr>
-      </tbody>
+        <td td class="text-right">
+          <button (click)="edit(book.book_id)" type="button" class="btn btn-primary mx-3" routerLink="/">Edit</button>
+        </td>
+        <td td class="text-right">
+          <button (click)="delete(book.book_id)" type="button" class="btn btn-danger mx-3"
+            routerLink="/">Delete</button>
+        </td>
+      </tr>
+    </tbody>
   </table>
 
 </div>
