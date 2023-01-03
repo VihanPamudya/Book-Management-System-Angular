@@ -117,21 +117,19 @@ public class BookService implements IBookService {
 
             Book currentBook = foundBook.get();
 
-            Book updatingBook = new Book();
-
             String bookName = book.getBookName();
-            updatingBook.setBookName(bookName);
+            currentBook.setBookName(bookName);
 
             String authorName = book.getAuthorName();
-            updatingBook.setAuthorName(authorName);
+            currentBook.setAuthorName(authorName);
 
             int quantity = book.getQuantity();
-            updatingBook.setQuantity(quantity);
+            currentBook.setQuantity(quantity);
 
             Double price = book.getPrice();
-            updatingBook.setPrice(price);
+            currentBook.setPrice(price);
 
-            Book updatedBook = bookRepository.save(updatingBook);
+            Book updatedBook = bookRepository.save(currentBook);
 
             BookDto bookDto = convertBookToBookResponseDto(updatedBook);
             return bookDto;
