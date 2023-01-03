@@ -12,8 +12,8 @@
     <tbody style="text-align: center;">
 
       <tr *ngFor="let book of bookList">
-        <td style="padding-top: 15px; cursor: pointer;"> {{book.book_name}} </td>
-        <td style="padding-top: 15px; cursor: pointer;"> {{book.author_name}} </td>
+        <td style="padding-top: 15px; cursor: pointer;"> {{book.bookName}} </td>
+        <td style="padding-top: 15px; cursor: pointer;"> {{book.authorName}} </td>
         <td style="padding-top: 15px; cursor: pointer;"> {{book.quantity}} </td>
         <td style="padding-top: 15px; cursor: pointer;"> {{book.price}} </td>
         <!-- <td>
@@ -24,10 +24,10 @@
 
                           </td> -->
         <td td class="text-right">
-          <button (click)="edit(book.book_id)" type="button" class="btn btn-primary mx-3" routerLink="/">Edit</button>
+          <button (click)="edit(book.id)" type="button" class="btn btn-primary mx-3" routerLink="/">Edit</button>
         </td>
         <td td class="text-right">
-          <button (click)="delete(book.book_id)" type="button" class="btn btn-danger mx-3"
+          <button (click)="delete(book.id)" type="button" class="btn btn-danger mx-3"
             routerLink="/">Delete</button>
         </td>
       </tr>

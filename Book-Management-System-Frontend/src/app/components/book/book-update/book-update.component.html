@@ -19,11 +19,11 @@
                   <div class="col-lg-6">
                     <div class="form-group">
                       <label class="form-control-label" for="input-bookname">Book Name</label>
-                      <input type="text" id="bookname" name="book_name" #book_name="ngModel"
-                        [(ngModel)]="book.book_name" class="form-control form-control-alternative"
+                      <input type="text" id="bookname" name="bookName" #bookName="ngModel"
+                        [(ngModel)]="book.bookName" class="form-control form-control-alternative"
                         placeholder="Book Name" required>
                       <label class="text-danger"
-                        *ngIf="(book_name.touched || form.submitted) && book_name.errors?.['required']">
+                        *ngIf="(bookName.touched || form.submitted) && bookName.errors?.['required']">
                         Book name is required
                       </label>
                     </div>
@@ -34,11 +34,11 @@
                   <div class="col-lg-6">
                     <div class="form-group">
                       <label class="form-control-label" for="input-authorname">Author Name</label>
-                      <input type="text" id="authorname" name="author_name" #author_name="ngModel"
-                        [(ngModel)]="book.author_name" class="form-control form-control-alternative"
+                      <input type="text" id="authorname" name="authorName" #authorName="ngModel"
+                        [(ngModel)]="book.authorName" class="form-control form-control-alternative"
                         placeholder="Author Name" required>
                       <label class="text-danger"
-                        *ngIf="(author_name.touched || form.submitted) && author_name.errors?.['required']">
+                        *ngIf="(authorName.touched || form.submitted) && authorName.errors?.['required']">
                         Author Name is required
                       </label>
                     </div>

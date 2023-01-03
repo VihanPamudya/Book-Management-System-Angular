@@ -1,7 +1,7 @@
 export class BookModel{
-    book_id! : number;
-    book_name! : string;
-    author_name! : string;
+    id! : number;
+    bookName! : string;
+    authorName! : string;
     quantity! : number;
     price! : number;
 }
