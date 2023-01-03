@@ -7,7 +7,7 @@ import { BookUpdateComponent } from './components/book/book-update/book-update.c
 const routes: Routes = [
   {path: '', component: BookAllListComponent},
   {path: 'add', component: BookAddComponent},
-  {path: 'update/${{book.id}}', component: BookUpdateComponent}
+  {path: 'update', component: BookUpdateComponent}
 ];
 
 @NgModule({
